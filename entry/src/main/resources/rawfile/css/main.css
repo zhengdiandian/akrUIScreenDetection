@@ -178,7 +178,7 @@ a { text-decoration: none;}
 #welcome  { margin: 0; height: 100%; width: 100%; position: fixed; background-color: white; }
 #welcome  .wrapper { margin: 0 auto; width: 750px; margin: 0 auto; position: relative; }
 #welcome .top { position: absolute; top:48px; height: 480px; }
-#welcome .left { width: 300px; border-right: 2px dashed black; left:0; }
+#welcome .left { width: 100vw;  left:0; }
 #welcome .left table { margin: 0 auto; border-spacing: 0; border: 3px solid #000; position: relative; top: 12px; }
 #welcome .left table td { font-family: SimHei, Arial, Helvetica, sans-serif; text-align: center; width: 240px; }
 #welcome .left table thead { font-size: 72px; background-color: #FFF; color: #000; }
@@ -214,6 +214,7 @@ a { text-decoration: none;}
     width: 200px;
     background-color: #3D7;
     margin: 80px auto;
+    margin-bottim: 40px;
     display: block;
     box-shadow: 0 0 20px rgba(79, 209, 143, 0.6);
     transition: all 0.5s;
