@@ -1,2 +1,2 @@
 # akrUIScreenDetection
-鸿蒙版屏幕检测
+鸿蒙版屏幕测试

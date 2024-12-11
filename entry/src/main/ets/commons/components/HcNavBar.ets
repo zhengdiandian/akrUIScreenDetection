@@ -8,17 +8,19 @@ export struct HcNavBar {
   @Prop
   leftIcon: ResourceStr =$r('app.media.ic_common_back')
   // 右边图标
-  @Prop
-  rightIcon: ResourceStr = $r('sys.media.ohos_ic_public_more')
+  // @Prop
+  // rightIcon: ResourceStr = $r('sys.media.ohos_ic_public_more')
   // 是否显示右边图标
-  @Prop showRight: boolean = true
+  // @Prop showRight: boolean = true
 
   build() {
     Row({space: 16 }){
       Image(this.leftIcon)
         .size({ width: 24, height: 24 })
-        .fillColor($r('app.color.black'))
-        .onClick(() => router.back())
+        .fillColor('#131313')
+        .onClick(() => router.pushUrl({
+          url: 'pages/Index'
+        }))
       Row(){
         if(this.title){
           Text(this.title)
@@ -32,21 +34,21 @@ export struct HcNavBar {
       }
       .height(56)
       .layoutWeight(1)
-      if(this.showRight){
-        Image(this.rightIcon)
-          .size({ width: 24, height: 24 })
-          .objectFit(ImageFit.Contain)
-      }else {
+      // if(this.showRight){
+      //   Image(this.rightIcon)
+      //     .size({ width: 24, height: 24 })
+      //     .objectFit(ImageFit.Contain)
+      // }else {
         Blank()
           .width(24)
-      }
+      // }
     }
     .padding({ left: 16, right: 16, top: this.topHeight })
     .height(56 + this.topHeight)
     .width('100%')
     .border({
       width: { bottom: this.showBorder ? 0.5 : 0 },
-      color: $r('app.color.common_gray_bg')
+      color: '#f3f4f5'
     })
   }
 }

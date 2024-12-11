@@ -32,6 +32,6 @@ export struct HcSkeletonItem {
       .height(16)
       .width(this.widthValue)
       .borderRadius(2)
-      .backgroundColor($r('app.color.white'))
+      // .backgroundColor($r('app.color.white'))
   }
 }

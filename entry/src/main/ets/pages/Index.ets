@@ -1,6 +1,7 @@
 import { webview } from '@kit.ArkWeb';
 import { window } from '@kit.ArkUI';
 import { common } from '@kit.AbilityKit';
+import { fullScreen } from '../commons/utils';
 
 @Entry
 @Component
@@ -16,6 +17,23 @@ struct Index {
     // 调用该接口手动改变设备横竖屏状态
     window.getLastWindow(context).then((lastWindow) => {
       lastWindow.setPreferredOrientation(isLandscape ? window.Orientation.LANDSCAPE : window.Orientation.PORTRAIT)
+    });
+  }
+  onPageShow(): void {
+    this.changeOrientation(false)
+    let context: common.UIAbilityContext = getContext(this) as common.UIAbilityContext;
+    // 调用该接口手动改变设备横竖屏状态
+    window.getLastWindow(context).then((lastWindow) => {
+      lastWindow.setWindowLayoutFullScreen(true);
+    });
+  }
+  onPageHide(): void {
+    this.changeOrientation(false)
+
+    let context: common.UIAbilityContext = getContext(this) as common.UIAbilityContext;
+    // 调用该接口手动改变设备横竖屏状态
+    window.getLastWindow(context).then((lastWindow) => {
+      lastWindow.setWindowLayoutFullScreen(false);
     });
   }
   build() {
@@ -34,6 +52,7 @@ struct Index {
           console.log("onFullScreenExit...")
           this.changeOrientation(false);
         })
+
     }
     .height('100%')
     .width('100%')
